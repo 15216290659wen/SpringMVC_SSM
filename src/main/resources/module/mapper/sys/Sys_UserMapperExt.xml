@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mskj.ssm.dao.Sys_UserMapperExt">
+    
+    <resultMap id="ExtendSysUserMap" type="com.mskj.ssm.Pojo.SysUserExt">
+        <id column="id" property="id" jdbcType="BIGINT"></id>
+        <result column="uuid" property="uuid" jdbcType="VARCHAR"></result>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"></result>
+        <result column="delete_time" property="deleteTime" jdbcType="TIMESTAMP"></result>
+        <result column="is_deleted" property="isDeleted" jdbcType="INTEGER" ></result>
+        <result column="user_name" property="userName" jdbcType="VARCHAR"></result>
+        <result column="user_studentid" property="userStudentid" jdbcType="VARCHAR"></result>
+        <result column="team_id" property="teamId" jdbcType="BIGINT"></result>
+        <result column="calss_id" property="calssId" jdbcType="BIGINT"></result>
+        <result column="bak1" property="bak1" jdbcType="VARCHAR"></result>
+        <result column="bak2" property="bak2" jdbcType="VARCHAR"></result>
+        <result column="bak3" property="bak3" jdbcType="VARCHAR"></result>
+    </resultMap>
+
+    <select id="Select_UserByName" parameterType = "Map" resultMap="ExtendSysUserMap" >
+      SELECT * FROM sys_user WHERE
+       sys_user.`is_deleted` = 0 AND  sys_user.`user_name`  = #{username}
+    </select>
+</mapper>

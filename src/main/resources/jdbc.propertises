@@ -1,0 +1,15 @@
+driver=com.mysql.jdbc.Driver
+#url=jdbc:mysql://123.58.6.150:3306/scrm-public-develp?useUnicode=true&characterEncoding=UTF-8
+#url=jdbc:mysql://123.58.6.150:8066/scrm-public?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+url=jdbc:mysql://127.0.0.1:3306/ssmexample?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+username=root
+password=123456
+
+
+initialSize=1
+maxActive=1000
+maxIdle=1000
+minIdle=15
+maxWait=60000
+timeBetweenEvictionRunsMillis=60000
+minEvictableIdleTimeMillis=60000
